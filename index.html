@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rajat Shenoy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script
+      src="https://kit.fontawesome.com/f154d53295.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <!-- <header>
+      <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-sm navbar-light px-5" id="bg-light">
+          <a class="navbar-brand px-auto" href="#">Home</a>
+          <a class="navbar-brand px-auto" href="#">Projects</a>
+        </nav>
+      </div>
+    </header> -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>Rajat Shenoy</h1>
+          <h3 id="sub">Software Developer | Python Developer</h3>
+          <a class="btn btn-dark px-5 py-2" href="files/Rajat_Shenoy_SPIT.pdf"
+            >Resume</a
+          >
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12 my-3">
+          <a href="https://www.instagram.com/shenoyrajat270/"
+            ><i class="fab fa-instagram" style="color: #05386b"></i
+          ></a>
+          <a href="https://github.com/rajatshenoy56"
+            ><i class="fab fa-github" style="color: #05386b"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/rajat-shenoy-00311a196/"
+            ><i class="fab fa-linkedin-in" style="color: #05386b"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var dataText = [
+        "Software Developer",
+        "Backend Developer",
+        "Python Dveloper",
+        "Django Developer",
+      ];
+
+      function typeWriter(text, i, fnCallback) {
+        if (i < text.length) {
+          document.querySelector("#sub").innerHTML =
+            text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+          setTimeout(function () {
+            typeWriter(text, i + 1, fnCallback);
+          }, 100);
+        }
+        else if (typeof fnCallback == "function") {
+          setTimeout(fnCallback, 2000);
+        }
+      }
+      function StartTextAnimation(i) {
+        if (typeof dataText[i] == "undefined") {
+          setTimeout(function () {
+            StartTextAnimation(0);
+          }, 20000);
+        }
+        if (i < dataText[i].length) {
+          typeWriter(dataText[i], 0, function () {
+            StartTextAnimation(i + 1);
+          });
+        }
+      }
+      StartTextAnimation(0);
+    });
+  </script>
+</html>

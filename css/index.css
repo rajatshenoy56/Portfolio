@@ -1,0 +1,95 @@
+*{
+    box-sizing:border-box;
+}
+header,
+section{
+    overflow-x: hidden;
+} 
+
+span {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+  }
+  
+  @keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+/* #bg-light{
+    background:#5cdb95;
+}
+
+.navbar-light .navbar-brand{
+    font-weight: bold;
+    font-size: 1.4rem;
+    color:#05386b;
+}
+
+
+.navbar-light .navbar-brand:hover{
+    background-color:#05386b;
+    color: #5cdb95;
+} */
+
+i{
+    color: #05386b !important;;
+    padding: 1.2rem;
+    font-size: 3rem;
+}
+
+
+.btn-dark{
+    background-color: #05386b;
+    border-color: #05386b;
+    color:#5cdb95;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.btn-dark:hover{
+    color: #5cdb95;
+    background-color: #edf5e1;
+    border-color:#edf5e1;
+}
+
+i:hover{
+    color:#edf5e1 !important;
+}
+
+body {
+    background: url(../images/bg.png) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container-fluid{
+    padding-top: 7rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .container-fluid h1{
+        font-size: 4rem;
+    }
+
+}
+
+@media only screen and (min-width: 601px) {
+    .container-fluid h1{
+        font-size: 5rem;
+    }  
+} 
+.container-fluid h1{
+    padding: 0.4rem;
+    color: #edf5e1;
+}
+
+
+.container-fluid h3{
+    color: #05386b;
+    padding: 0.9rem;
+}
+
+
