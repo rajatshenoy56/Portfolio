@@ -42,7 +42,7 @@
         <div class="col-md-12 text-center">
           <h1>Rajat Shenoy</h1>
           <h3 id="sub">Software Developer | Python Developer</h3>
-          <a class="btn btn-dark px-5 py-2" href="files/Rajat_Shenoy_SPIT.pdf"
+          <a class="btn btn-dark px-5 py-2" href="files/RajatShenoy_Resume.pdf"
             >Resume</a
           >
         </div>
@@ -71,6 +71,17 @@
         "Django Developer",
       ];
 
+      function backTypeWriter(text, i ){
+        if (i >= 0) {
+          document.querySelector("#sub").innerHTML =
+            text.substring(0, i) + '<span aria-hidden="true"></span>';
+
+          setTimeout(function () {
+            backTypeWriter(text, i - 1);
+          }, 100);
+        }
+      }
+
       function typeWriter(text, i, fnCallback) {
         if (i < text.length) {
           document.querySelector("#sub").innerHTML =
@@ -81,14 +92,16 @@
           }, 100);
         }
         else if (typeof fnCallback == "function") {
-          setTimeout(fnCallback, 2000);
+          setTimeout(function(){backTypeWriter(text,i)},2000)
+          setTimeout(fnCallback, 4000);
         }
       }
+
       function StartTextAnimation(i) {
         if (typeof dataText[i] == "undefined") {
           setTimeout(function () {
             StartTextAnimation(0);
-          }, 20000);
+          }, 200);
         }
         if (i < dataText[i].length) {
           typeWriter(dataText[i], 0, function () {
